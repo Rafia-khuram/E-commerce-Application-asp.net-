@@ -1,0 +1,33 @@
+﻿@using ShoppingApplication.BOL
+@model List<Product>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="~/Content/StyleSheet.css" rel="stylesheet" />
+<link href="~/Content/style.css" rel="stylesheet" />
+
+<body>
+    <div class="container">
+        @foreach (var item in Model)
+        {
+            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <center>
+                            <a href="~/Home/Detail/@item.Id">
+                                <img src="@item.Image" class="product-img">
+                            </a>
+                            <div>Price : PKR @item.Price/-</div>
+                            <a href="~/Home/Detail/@item.Id">
+                                <div class="text-center product-title">@item.Name</div>
+                            </a>
+                            <a href="~/Home/Detail/@item.Id" class="btn btn-custom">View Product</a>
+                        </center>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</body>

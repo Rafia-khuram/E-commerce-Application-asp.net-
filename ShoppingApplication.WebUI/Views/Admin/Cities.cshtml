@@ -1,0 +1,51 @@
+﻿@using ShoppingApplication.BOL
+@model List<City>
+@{
+    ViewBag.Title = "Cities";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<link href="~/Content/StyleSheet.css" rel="stylesheet" />
+<div class="container">
+    <h2>Cities</h2>
+
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <a class="panel-link" href="~/Admin/AddCity">Add City</a>
+        </div>
+        <div class="panel-body">
+
+            <table class="table table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th>City Id</th>
+                        <th>City Name</th>
+                        <th>Country Name</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.Id</td>
+                            <td>@item.Name</td>
+                            <td>@item.Country.Name</td>
+
+
+                            <td>
+                                <a href="#"> <span class="glyphicon glyphicon-search text-primary"></span></a>
+                                <a href="/Admin/EditCity/@item.Id"> <span class="glyphicon glyphicon-edit text-info"></span></a>
+                                <a href="/Admin/DeleteCity/@item.Id"> <span class="glyphicon glyphicon-remove text-danger"></span></a>
+
+
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+
+
+            </table>
+</div>
+</div>
+</div>

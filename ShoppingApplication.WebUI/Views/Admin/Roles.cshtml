@@ -1,0 +1,51 @@
+﻿@using ShoppingApplication.BOL
+@model List<Role>
+@{
+    ViewBag.Title = "Roles";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<link href="~/Content/StyleSheet.css" rel="stylesheet" />
+<div class="container">
+    <h2>Roles</h2>
+
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <a class="panel-link" href="~/Admin/AddRole">Add Role</a>
+        </div>
+        <div class="panel-body">
+
+            <table class="table table-bordered table-hover">
+
+                <thead>
+                    <tr>
+                        <th>Role Id</th>
+                        <th>Role Name</th>
+                        <th>Action</th>
+
+                    </tr>
+
+                </thead>
+                <tbody>
+
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+
+                            <td>@item.Id</td>
+                            <td>@item.Name</td>
+                            <td>
+                                <a href="#"> <span class="glyphicon glyphicon-search text-primary"></span></a>
+                                <a href="/Admin/EditRole/@item.Id"> <span class="glyphicon glyphicon-edit text-info"></span></a>
+                                <a href="/Admin/DeleteRole/@item.Id"> <span class="glyphicon glyphicon-remove text-danger"></span></a>
+
+
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+
+            </table>
+</div>
+</div>
+
+    </div>

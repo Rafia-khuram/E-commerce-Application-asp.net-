@@ -1,0 +1,31 @@
+﻿@using ShoppingApplication.BOL
+@model Country
+@{
+    ViewBag.Title = "AddCountry";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container">
+    <div class="col-lg-4 col-lg-push-4 col-md-4 col-md-push-4">
+        <div class="panel panel-default">
+            <h2 class="text-center">Add New Country</h2>
+            <div class="panel-body">
+                @using (Html.BeginForm("AddCountry", "Admin", FormMethod.Post))
+                {
+                    <div class="form-group">
+                        <div class="input-group form-inline">
+                            <span class="input-group-addon">
+                                <span class="fa fa-city"></span>
+                            </span>
+                            @Html.TextBoxFor(m => m.Name, new { @class = "form-control", placeholder = "City Name", required = "required" })
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <button class="btn btn-black" type="submit">Add Country</button>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+

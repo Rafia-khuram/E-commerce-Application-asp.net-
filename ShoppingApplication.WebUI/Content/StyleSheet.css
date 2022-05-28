@@ -1,0 +1,37 @@
+﻿body {
+}
+.glyphicon{
+    margin:8px;
+
+}
+.panel-link{
+    color:white;
+    margin-left:3px;
+}
+
+    .panel-link:hover {
+        color: #e6e8e9;
+    }
+
+    .nav-list{
+        color:white;
+
+    }
+
+.navbar-brand-customized {
+    
+    float: left;
+    height: 50px;
+    padding: 16px 65px;
+    font-size: 19px;
+    line-height: 20px;
+}
+a {
+    color:#f1f1f1;
+}
+
+    a:hover {
+        color: grey;
+        text-decoration:none;
+    }
+

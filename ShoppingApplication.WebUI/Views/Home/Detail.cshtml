@@ -1,0 +1,49 @@
+﻿@using ShoppingApplication.BOL
+@model Product
+@{
+    ViewBag.Title = "Detail";
+}
+<link href="~/Content/StyleSheet.css" rel="stylesheet" />
+<link href="~/Content/style.css" rel="stylesheet" />
+
+<body class="home-body">
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModal-label">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModal-label">Contact Us to Buy Now</h4>
+                </div>
+                <div class="modal-body">
+                    <p>To Buy this Product, Contact Us at 03xxxxxxxxx</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-black" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container">
+        <div class="col-lg-4">
+            <img src="@Model.Image" style="width: 100%; height: auto">
+
+        </div>
+        <div class="col-lg-8">
+            <div class="col-lg-4"><h4 class=detail-style>Title: </h4></div>
+            <div class="col-lg-8"><h4 class=detail-style>@Model.Name </h4></div>
+            <div class="col-lg-4"><h4 class=detail-style>Price: </h4></div>
+            <div class="col-lg-8"><h4 class=detail-style> @Model.Price</h4></div>
+            <div class="col-lg-4"><h4 class=detail-style>Description: </h4></div>
+            <div class="col-lg-8"><h4 class=detail-style>@Model.Description </h4></div>
+            <div class="col-lg-4"><h4 class=detail-style>Product Status: </h4></div>
+            <div class="col-lg-8"><h4 class=detail-style>@Model.ProductStatus.Name </h4></div>
+            <div class="text-center" style="margin-top:300px">
+               
+                <a class="btn btn-black"href="/Buyer/AddOrder/@Model.Id">Buy now</a>
+            </div>
+
+        </div>
+    </div>
+</body>

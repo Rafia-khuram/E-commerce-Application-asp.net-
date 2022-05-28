@@ -1,0 +1,60 @@
+﻿@using ShoppingApplication.BOL
+@model List<User>
+@{
+    ViewBag.Title = "Users";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<link href="~/Content/StyleSheet.css" rel="stylesheet" />
+<div class="container">
+    <h2>Users</h2>
+
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+           <a class="panel-link" href="~/Admin/AddUser">Add User</a>
+        </div>
+        <div class="panel-body">
+
+            <table class="table table-bordered table-hover">
+
+                <thead>
+                    <tr>
+                        <th>User Id</th>
+                        <th>User Name</th>
+                        <th>Email</th>
+                        <th>Password</th>
+                        <th>Phone Number</th>
+                        <th>Role</th>
+                        <th>Action</th>
+
+                    </tr>
+
+                </thead>
+                <tbody>
+
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+
+                            <td>@item.Id</td>
+                            <td>@item.UserName</td>
+                            <td>@item.Email</td>
+                            <td>@item.Password</td>
+                            <td>@item.PhoneNumber </td>
+                            <td>@item.Role.Name</td>
+                            <td>
+                                <a href="#"> <span class="glyphicon glyphicon-search text-primary"></span></a>
+                                <a href="/Admin/EditUser/@item.Id"> <span class="glyphicon glyphicon-edit text-info"></span></a>
+                                <a href="/Admin/DeleteUser/@item.Id"> <span class="glyphicon glyphicon-remove text-danger"></span></a>
+
+
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+
+            </table>
+        </div>
+    </div>
+
+</div>

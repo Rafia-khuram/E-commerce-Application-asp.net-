@@ -1,0 +1,56 @@
+﻿@using ShoppingApplication.BOL
+@model List<Product>
+@{
+    ViewBag.Title = "Products";
+    Layout = "~/Views/Shared/_LayoutSeller.cshtml";
+}
+<link href="~/Content/StyleSheet.css" rel="stylesheet" />
+<div class="container">
+    <h2>Products</h2>
+
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <a class="panel-link" href="~/Seller/AddProduct">Add Product</a>
+        </div>
+        <div class="panel-body">
+            <table class="table table-bordered table-hover">
+
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Product Name</th>
+                        <th>Price</th>
+                        <th>Description</th>
+                        <th>Uploaded On</th>
+                        <th>Image</th>
+                        <th>Product Status</th>
+                        <th>Action</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.Id</td>
+                            <td>@item.Name</td>
+                            <td>@item.Price</td>
+                            <td>@item.Description</td>
+                            <td>@item.UploadedOn  </td>
+                            <td>@item.Image</td>
+                            <td>@item.Seller.UserName</td>
+                            <td>@item.ProductStatus.Name</td>
+                            <td>
+                                <a href="/Seller/Detail/@item.Id"> <span class="glyphicon glyphicon-search text-primary"></span></a>
+                                <a href="/Seller/EditProduct/@item.Id"> <span class="glyphicon glyphicon-edit text-info"></span></a>
+                                <a href="/Seller/DeleteProduct/@item.Id"> <span class="glyphicon glyphicon-remove text-danger"></span></a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+
+            </table>
+</div>
+</div>
+</div>
